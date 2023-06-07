@@ -15,7 +15,7 @@ For opening file and reading the file:
 
 `file.close()` // close the file after opening 
 
-For automatically closing the opened file use this :
+For automatically closing the opened file in `terminal` use this :
 
 
 `with open("health_check.py") as file:`
