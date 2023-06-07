@@ -5,3 +5,4 @@ For opening file and reading the file:
 `file = open("health_check.py")`
 `print(file.readlines())` //reads a single line each time and updates the next time
 `print(file.read())` //reads to the end 
+`file.close()` // close the file after opening 
