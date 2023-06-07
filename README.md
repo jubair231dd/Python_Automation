@@ -18,7 +18,7 @@ For opening file and reading the file:
 For automatically closing the opened file use this :
 
 
-    `with open("health_check.py") as file:`
+`with open("health_check.py") as file:`
 
 
-    `print(file.readline())`
+`   print(file.readline())`
