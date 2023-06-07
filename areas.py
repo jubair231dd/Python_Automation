@@ -7,6 +7,7 @@ import math
 def area_calculate(x, y):
     print("The area is : ")
     return (x*y)
+#circle area calculate 
 
 def circle(x):
     return math.pi*(x**2)
