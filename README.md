@@ -41,3 +41,15 @@ For storing the file contents in a list:
 >>> print(lines)
 ['\n', 'Georgia pulled me in, I asked to\n', 'Georgia, wrap me up in all your\n', 'I found you\n', 'I found you\n', 'I found you\n', 'I said, "I would never fall unless it\'s you I \n', 'I said, "I would never fall unless it\'s you I \n', 
 ```
+
+For write in a file : 
+
+```
+>>> with open("demo.txt", "w") as file:
+...     file.write("It is my favourite song")
+
+"r" > read only mode
+"w" > write only , overwrites the current content 
+"a" > append the contents
+"r+" > read - write mode
+'''
