@@ -11,10 +11,10 @@ file.close() // close the file after opening
 ```
 
 For automatically closing the opened file in `terminal` use this :
-
-
-```with open("health_check.py") as file:
-        print(file.readline())```
+```
+with open("health_check.py") as file:
+        print(file.readline())
+ ```
 
 
 For reading each line in the text file after making it `upper case`:
