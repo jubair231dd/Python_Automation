@@ -83,38 +83,39 @@ For getting the current working directory in python :
 >>> import os
 >>> print(os.getcwd())
 /Users/student/Desktop/Courses/coursera_python_automate
-
+```
+```
 >>> os.mkdir("new_dir")
 
 >>> os.chdir("new_dir")
-
->>> os.getcwd()
-'/Users/student/Desktop/Courses/coursera_python_automate/new_dir'
-
+```
+```
 >>> os.rmdir("new_dir")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 FileNotFoundError: [Errno 2] No such file or directory: 'new_dir'
-
+```
+```
 >>> os.mkdir("new1")
 
 >>> os.rmdir("new1")
 >>> os.listdir()
 []
-
->>> os.getcwd()
-'/Users/student/Desktop/Courses/coursera_python_automate/new_dir'
+```
+```
 
 >>> os.mkdir("n1")
 >>> os.mkdir("n2")
-
+```
+```
 >>> os.listdir()
 ['n1', 'n2']
+```
 
-For listing all the files and directories inside a `dir`
->>> os.getcwd()
-'/Users/student/Desktop/Courses/coursera_python_automate/new_dir'
->>> dir = "new_dir"
+For listing all the files and directories inside a `dir`:
+```
+>>> dir = "coursera_python_automate"
+>>> import os
 >>> for name in os.listdir(dir):
 ...     fullname = os.path.join(dir, name)
 ...     if os.path.isdir(fullname):
@@ -122,5 +123,17 @@ For listing all the files and directories inside a `dir`
 ...     else:
 ...             print("{} is a file".format(fullname))
 ... 
+coursera_python_automate/hello_world.py is a file
+coursera_python_automate/demo.txt is a file
+coursera_python_automate/book.txt is a file
+coursera_python_automate/areas.py is a file
+coursera_python_automate/__init__.py is a file
+coursera_python_automate/__pycache__ is a directory
+coursera_python_automate/README.md is a file
+coursera_python_automate/rename1.txt is a file
+coursera_python_automate/new_dir is a directory
+coursera_python_automate/health_check.py is a file
+coursera_python_automate/sum.py is a file
+coursera_python_automate/.git is a directory
 ```
 
