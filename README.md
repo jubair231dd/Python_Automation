@@ -28,7 +28,11 @@ For reading each line in the text file after making it `upper case`:
 
 
 `with open("demo.txt") as file:
+
+
    for line in file:
+   
+   
       print(line.strip().lower())`
       
       
