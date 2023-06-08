@@ -29,5 +29,6 @@ For reading each line in the text file after making it `upper case`:
 `with open("health_check.py") as file:`
 
    `for line in file:`
+   
          `print(line.upper())`
         
