@@ -159,6 +159,7 @@ Generate the `csv` file:
 ...     writer = csv.writer(hosts_csv)
 ...     writer.writerows(hosts) // writes all the rows, when writer.writerow used the only one rows are written
 
+
 ❯ ls
 README.md       aws.xlsx        hello_world.py  hosts.csv
 __init__.py     book.txt        homeprices.csv  new_dir
@@ -167,4 +168,19 @@ areas.py        health_check.py homeprices1.csv sum.py
 ❯ cat hosts.csv
 Jamil,0171233
 nayeem,0393993
+```
+Reading a writing `csv` file with `dictionaries` : 
+```
+>>> import csv
+>>> with open("homeprices.csv") as homeprices:                  
+...     reader = csv.DictReader(homeprices)                     
+...     for row in reader:                                                 
+...             print(("{} bedrooms price is {}").format(row["bedrooms"],row["price"]))
+... 
+3 bedrooms price is 550000
+4 bedrooms price is 565000
+ bedrooms price is 610000
+3 bedrooms price is 595000
+5 bedrooms price is 760000
+6 bedrooms price is 810000 
 ```
