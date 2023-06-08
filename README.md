@@ -171,6 +171,17 @@ nayeem,0393993
 ```
 Reading and writing `csv` file with `dictionaries` : 
 Reading:
+
+```
+❯ cat homeprices.csv
+area,bedrooms,age,price
+2600,3,20,550000
+3000,4,15,565000
+3200,,18,610000
+3600,3,30,595000
+4000,5,8,760000
+4100,6,8,810000% 
+```
 ```
 >>> import csv
 >>> with open("homeprices.csv") as homeprices:                  
