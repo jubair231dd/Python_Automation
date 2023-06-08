@@ -33,9 +33,11 @@ with open("demo.txt") as file:
  
 For storing the file contents in a list:
  
-```>>> file = open("demo.txt")
+```
+>>> file = open("demo.txt")
 >>> lines = file.readlines()
 >>> file.close()
 >>> lines.sort()
 >>> print(lines)
-['\n', 'I love you Juthy \n', 'I want to marry you \n', 'yOU HAVE MY HEART \n', 'you are my heart \n', 'you understand me a lot\n']```
+['\n', 'I love you Juthy \n', 'I want to marry you \n', 'yOU HAVE MY HEART \n', 'you are my heart \n', 'you understand me a lot\n']
+```
