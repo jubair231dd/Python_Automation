@@ -19,8 +19,8 @@ with open("demo.txt") as file:
   for line in file:
       print(line.strip().upper())
  ```  
- For stripping the new line chracter after each line do this:     
-`     print(line.strip().upper()`
+ For stripping the new line chracter after each line do this:   
+`print(line.strip().upper()`
 For storing the file contents in a list:
 ```
 >>> file = open("demo.txt")
@@ -39,10 +39,11 @@ For write in a file :
 "w" > write only , overwrites the current content 
 "a" > append the contents
 "r+" > read - write mode
-'''
-
-For removing a file:
+```
+For removing a file using the `os` module:
 ```
 >>> import os
 >>> os.remove("remove.txt")
 ```
+
+
