@@ -136,4 +136,31 @@ coursera_python_automate/health_check.py is a file
 coursera_python_automate/sum.py is a file
 coursera_python_automate/.git is a directory
 ```
+Working with `.csv` file:
 
+
+Read the csv file:
+```
+>>> import csv
+>>> f = open("homeprices.txt")
+>>> aws_f = csv.reader(f)
+>>> for row in aws_f:
+...     print("area: {}, bedrooms: {}, age: {}, price: {}". format(area, bedrooms, age, price)
+```
+Generate the `csv` file: 
+```
+>>> import csv
+>>> hosts = [["Jamil", "0171233"], ["nayeem", "0393993"]]
+>>> with open('hosts.csv', 'w') as hosts_csv:
+...     writer = csv.writer(hosts_csv)
+...     writer.writerows(hosts) // writes all the rows, when writer.writerow used the only one rows are written
+
+❯ ls
+README.md       aws.xlsx        hello_world.py  hosts.csv
+__init__.py     book.txt        homeprices.csv  new_dir
+__pycache__     demo.txt        homeprices.txt  rename1.txt
+areas.py        health_check.py homeprices1.csv sum.py
+❯ cat hosts.csv
+Jamil,0171233
+nayeem,0393993
+```
