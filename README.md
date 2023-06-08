@@ -33,5 +33,7 @@ For reading each line in the text file after making it `upper case`:
       `print(line.upper())`
       
       for stripping the new line chracter after each line do this 
+      
+      
          `print(line.strip().upper()`
         
