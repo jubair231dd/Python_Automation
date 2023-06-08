@@ -77,3 +77,50 @@ For finding the `absolute path` of a file:
 >>> os.path.abspath("demo.txt")
 '/Users/student/Desktop/Courses/coursera_python_automate/demo.txt'
 ```
+For getting the current working directory in python :
+```
+
+>>> import os
+>>> print(os.getcwd())
+/Users/student/Desktop/Courses/coursera_python_automate
+
+>>> os.mkdir("new_dir")
+
+>>> os.chdir("new_dir")
+
+>>> os.getcwd()
+'/Users/student/Desktop/Courses/coursera_python_automate/new_dir'
+
+>>> os.rmdir("new_dir")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'new_dir'
+
+>>> os.mkdir("new1")
+
+>>> os.rmdir("new1")
+>>> os.listdir()
+[]
+
+>>> os.getcwd()
+'/Users/student/Desktop/Courses/coursera_python_automate/new_dir'
+
+>>> os.mkdir("n1")
+>>> os.mkdir("n2")
+
+>>> os.listdir()
+['n1', 'n2']
+
+For listing all the files and directories inside a `dir`
+>>> os.getcwd()
+'/Users/student/Desktop/Courses/coursera_python_automate/new_dir'
+>>> dir = "new_dir"
+>>> for name in os.listdir(dir):
+...     fullname = os.path.join(dir, name)
+...     if os.path.isdir(fullname):
+...             print("{} is a directory".format(fullname))
+...     else:
+...             print("{} is a file".format(fullname))
+... 
+```
+
