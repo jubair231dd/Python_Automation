@@ -50,3 +50,10 @@ For renaming a file:
 >>> import os 
 >>> os.rename("old_file", "new_file.txt")
 ```
+Check whether a file exists or not using the `os` module:
+```
+>>> os.path.exists("rename1.txt")
+True
+>>> os.path.exists("rename.txt")
+False
+```
