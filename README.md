@@ -57,3 +57,15 @@ True
 >>> os.path.exists("rename.txt")
 False
 ```
+For getting the size and time of modification of a file using `os`:
+```
+>>> os.path.getsize("health_check.py")
+376
+>>> os.path.getmtime("health_check.py")
+1686166960.7232504 // this is time stamp not the actual time
+
+>>> import datetime 
+>>> timestamp = os.path.getmtime("health_check.py")
+>>> datetime.datetime.fromtimestamp(timestamp)
+datetime.datetime(2023, 6, 7, 15, 42, 40, 723250) // this is used for getting the date and time it was created
+```
