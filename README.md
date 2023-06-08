@@ -26,11 +26,15 @@ For automatically closing the opened file in `terminal` use this :
 
 For reading each line in the text file after making it `upper case`:
 
+
 `with open("health_check.py") as file:`
+
 
    ` for line in file:`
    
+   
       `print(line.upper())`
+      
       
       for stripping the new line chracter after each line do this 
       
