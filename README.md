@@ -69,3 +69,8 @@ For getting the size and time of modification of a file using `os`:
 >>> datetime.datetime.fromtimestamp(timestamp)
 datetime.datetime(2023, 6, 7, 15, 42, 40, 723250) // this is used for getting the date and time it was created
 ```
+For finding the `absolute path` of a file:
+```
+>>> os.path.abspath("demo.txt")
+'/Users/student/Desktop/Courses/coursera_python_automate/demo.txt'
+```
