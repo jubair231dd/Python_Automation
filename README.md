@@ -39,5 +39,5 @@ For storing the file contents in a list:
 >>> file.close()
 >>> lines.sort()
 >>> print(lines)
-['\n', 'I love you Juthy \n', 'I want to marry you \n', 'yOU HAVE MY HEART \n', 'you are my heart \n', 'you understand me a lot\n']
+['\n', 'Georgia pulled me in, I asked to\n', 'Georgia, wrap me up in all your\n', 'I found you\n', 'I found you\n', 'I found you\n', 'I said, "I would never fall unless it\'s you I \n', 'I said, "I would never fall unless it\'s you I \n', 
 ```
