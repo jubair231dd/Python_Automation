@@ -34,8 +34,17 @@ For reading each line in the text file after making it `upper case`:
 `     print(line.strip().upper())`
       
       
-   for stripping the new line chracter after each line do this 
+ For stripping the new line chracter after each line do this:
       
       
 `     print(line.strip().upper()`
         
+ 
+For storing the file contents in a list:
+ 
+```>>> file = open("demo.txt")
+>>> lines = file.readlines()
+>>> file.close()
+>>> lines.sort()
+>>> print(lines)
+['\n', 'I love you Juthy \n', 'I want to marry you \n', 'yOU HAVE MY HEART \n', 'you are my heart \n', 'you understand me a lot\n']```
