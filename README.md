@@ -141,11 +141,15 @@ Working with `.csv` file:
 
 Read the csv file:
 ```
->>> import csv
->>> f = open("homeprices.txt")
+import csv
+>>> f = open("hosts.csv")
 >>> aws_f = csv.reader(f)
 >>> for row in aws_f:
-...     print("area: {}, bedrooms: {}, age: {}, price: {}". format(area, bedrooms, age, price)
+...     name, number = row 
+...     print("name: {}, number: {}".format(name, number))
+... 
+name: Jamil, number: 0171233
+name: nayeem, number: 0393993
 ```
 Generate the `csv` file: 
 ```
