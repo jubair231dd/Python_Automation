@@ -40,6 +40,9 @@ For write in a file :
 "a" > append the contents
 "r+" > read - write mode
 ```
+Working with the `os` module: 
+
+
 For removing a file using the `os` module:
 ```
 >>> import os
