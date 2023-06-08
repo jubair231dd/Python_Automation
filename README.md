@@ -29,11 +29,9 @@ For reading each line in the text file after making it `upper case`:
 
 `with open("demo.txt") as file:`
 
+`  for line in file:`
 
-   `for line in file:`
-   
-   
-      `print(line.strip().upper())`
+`     print(line.strip().upper())`
       
       
    for stripping the new line chracter after each line do this 
