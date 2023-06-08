@@ -30,5 +30,5 @@ For reading each line in the text file after making it `upper case`:
 
    `  for line in file:`
    
-         `print(line.upper())`
+        `print(line.upper())`
         
