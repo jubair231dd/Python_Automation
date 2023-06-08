@@ -169,7 +169,8 @@ areas.py        health_check.py homeprices1.csv sum.py
 Jamil,0171233
 nayeem,0393993
 ```
-Reading a writing `csv` file with `dictionaries` : 
+Reading and writing `csv` file with `dictionaries` : 
+Reading:
 ```
 >>> import csv
 >>> with open("homeprices.csv") as homeprices:                  
@@ -184,3 +185,22 @@ Reading a writing `csv` file with `dictionaries` :
 5 bedrooms price is 760000
 6 bedrooms price is 810000 
 ```
+Writing:
+```
+>>> users = [{"name" : "jamil", "salary" : 2000}, {"name" : "kobbat", "salary" : 40000}]
+>>> keys = ["name", "salary"]
+>>> with open("employee.csv", "w") as employee:
+...     writer = csv.DictWriter(employee, fieldnames = keys)
+...     writer.writeheader()
+...     writer.writerows(users)                                            
+... 
+13
+>>> 
+[26]  + 78509 suspended  python3
+❯ cat employee.csv
+name,salary
+jamil,2000
+kobbat,40000
+```
+
+
