@@ -27,16 +27,16 @@ For automatically closing the opened file in `terminal` use this :
 For reading each line in the text file after making it `upper case`:
 
 
-`with open("demo.txt") as file:
+`with open("demo.txt") as file:`
 
 
-   for line in file:
+   `for line in file:`
    
    
-      print(line.strip().lower())`
+      `print(line.strip().upper())`
       
       
-      for stripping the new line chracter after each line do this 
+   for stripping the new line chracter after each line do this 
       
       
          `print(line.strip().upper()`
