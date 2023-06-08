@@ -45,5 +45,8 @@ For removing a file using the `os` module:
 >>> import os
 >>> os.remove("remove.txt")
 ```
-
-
+For renaming a file:
+```
+>>> import os 
+>>> os.rename("old_file", "new_file.txt")
+```
