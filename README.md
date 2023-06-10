@@ -213,5 +213,15 @@ name,salary
 jamil,2000
 kobbat,40000
 ```
-
+# Working with `Regular Expression` 
+```
+>>> import re
+>>> log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Perfuming package upgrade"
+>>> regex = r"\[(\d+)\]"
+>>> result = re.search(regex, log) 
+>>> print(result)
+<re.Match object; span=(39, 46), match='[12345]'>
+>>> print(result[1])
+12345
+```
 
