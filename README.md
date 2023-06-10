@@ -224,4 +224,8 @@ kobbat,40000
 >>> print(result[1])
 12345
 ```
-
+# Search using `grep` command in CLI: 
+```
+ grep me /Users/student/Desktop/Courses/coursera_python_automate/demo.txt
+Georgia, wrap me up in all your beauty, You are an angleI 
+```
