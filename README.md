@@ -1,27 +1,27 @@
 # Python_Automation
-Lists the materials and files I needed to learn the automation in Python.
+#Lists the materials and files I needed to learn the automation in Python.
 
-For opening file and reading the file:
+#For opening file and reading the file:
 ```
 file = open("file_name") // pass the absolute `PATH` if the file is in another `dir`
 print(file.readlines()) //reads a single line each time and updates the next time
 print(file.read()) //reads to the end 
 file.close() // close the file after opening
 ```
-For automatically closing the opened file in `terminal` use this :
+#For automatically closing the opened file in `terminal` use this :
 ```
 with open("health_check.py") as file:
         print(file.readline())
  ```
-For reading each line in the text file after making it `upper case`:
+#For reading each line in the text file after making it `upper case`:
 ```
 with open("demo.txt") as file:
   for line in file:
       print(line.strip().upper())
  ```  
- For stripping the new line chracter after each line do this:   
+#For stripping the new line chracter after each line do this:   
 `print(line.strip().upper()`
-For storing the file contents in a list:
+#For storing the file contents in a list:
 ```
 >>> file = open("demo.txt")
 >>> lines = file.readlines()
@@ -30,7 +30,7 @@ For storing the file contents in a list:
 >>> print(lines)
 ['\n', 'Georgia pulled me in, I asked to\n', 'Georgia, wrap me up in all your\n', 'I found you\n', 'I found you\n', 'I found you\n', 'I said, "I would never fall unless it\'s you I \n', 'I said, "I would never fall unless it\'s you I \n', 
 ```
-For write in a file : 
+#For write in a file : 
 ```
 >>> with open("demo.txt", "w") as file:
 ...     file.write("It is my favourite song")
@@ -40,27 +40,27 @@ For write in a file :
 "a" > append the contents
 "r+" > read - write mode
 ```
-Working with the `os` module: 
+#Working with the `os` module: 
 
 
-For removing a file using the `os` module:
+#For removing a file using the `os` module:
 ```
 >>> import os
 >>> os.remove("remove.txt")
 ```
-For renaming a file:
+#For renaming a file:
 ```
 >>> import os 
 >>> os.rename("old_file", "new_file.txt")
 ```
-Check whether a file exists or not using the `os` module:
+#Check whether a file exists or not using the `os` module:
 ```
 >>> os.path.exists("rename1.txt")
 True
 >>> os.path.exists("rename.txt")
 False
 ```
-For getting the size and time of modification of a file using `os`:
+#For getting the size and time of modification of a file using `os`:
 ```
 >>> os.path.getsize("health_check.py")
 376
@@ -72,12 +72,12 @@ For getting the size and time of modification of a file using `os`:
 >>> datetime.datetime.fromtimestamp(timestamp)
 datetime.datetime(2023, 6, 7, 15, 42, 40, 723250) // this is used for getting the date and time it was created
 ```
-For finding the `absolute path` of a file:
+#For finding the `absolute path` of a file:
 ```
 >>> os.path.abspath("demo.txt")
 '/Users/student/Desktop/Courses/coursera_python_automate/demo.txt'
 ```
-For getting the current working directory in python :
+#For getting the current working directory in python :
 ```
 
 >>> import os
@@ -112,7 +112,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'new_dir'
 ['n1', 'n2']
 ```
 
-For listing all the files and directories inside a `dir`:
+#For listing all the files and directories inside a `dir`:
 ```
 >>> dir = "coursera_python_automate"
 >>> import os
@@ -136,10 +136,10 @@ coursera_python_automate/health_check.py is a file
 coursera_python_automate/sum.py is a file
 coursera_python_automate/.git is a directory
 ```
-Working with `.csv` file:
+#Working with `.csv` file:
 
 
-Read the csv file:
+#Read the csv file:
 ```
 import csv
 >>> f = open("hosts.csv")
@@ -151,7 +151,7 @@ import csv
 name: Jamil, number: 0171233
 name: nayeem, number: 0393993
 ```
-Generate the `csv` file: 
+#Generate the `csv` file: 
 ```
 >>> import csv
 >>> hosts = [["Jamil", "0171233"], ["nayeem", "0393993"]]
@@ -169,8 +169,8 @@ areas.py        health_check.py homeprices1.csv sum.py
 Jamil,0171233
 nayeem,0393993
 ```
-Reading and writing `csv` file with `dictionaries` : 
-Reading:
+#Reading and writing `csv` file with `dictionaries` : 
+### Reading:
 
 ```
 ❯ cat homeprices.csv
@@ -196,7 +196,7 @@ area,bedrooms,age,price
 5 bedrooms price is 760000
 6 bedrooms price is 810000 
 ```
-Writing:
+### Writing:
 ```
 >>> users = [{"name" : "jamil", "salary" : 2000}, {"name" : "kobbat", "salary" : 40000}]
 >>> keys = ["name", "salary"]
