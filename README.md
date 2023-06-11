@@ -326,3 +326,22 @@ print(check_punctuation("End of the line")) # False
 >>> print(re.search(r"[^a-zA-Z ]+", "The is highway 90: i love it"))
 <re.Match object; span=(15, 18), match='90:'>
 ```
+# `re.findall() for finding all the matches
+```
+
+>>> print(re.findall(r"cat|dog", "I love cats and dogs"))
+['cat', 'dog']
+
+>>> print(re.findall(r"cat|dog", "I love cats and dogs. But sometimes cats make me sad"))
+['cat', 'dog', 'cat']
+
+>>> print(re.findall(r"[^a-zA-Z ]", "The is highway 90: i love it"))
+['9', '0', ':']
+
+>>> print(re.findall(r"[,./;@$%&]", "I love:there ,.;@#$%"))
+[',', '.', ';', '@', '$', '%']
+>>> print(re.findall(r"[^,./;@$%&]", "I love:there ,.;@#$%"))
+['I', ' ', 'l', 'o', 'v', 'e', ':', 't', 'h', 'e', 'r', 'e', ' ', '#']
+
+
+```
