@@ -244,3 +244,23 @@ Georgia, wrap me up in all your beauty, You are an angleI
 grep ^are /Users/student/Desktop/Courses/coursera_python_automate/demo.txt
 ❯ grep are$ /Users/student/Desktop/Courses/coursera_python
 ```
+# working with basic `regular expressions`
+```
+import re
+def check_aei (text):
+  result = re.search(r"a.e.i", text)
+  return result != None
+
+print(check_aei("academia")) # True
+print(check_aei("aerial")) # False
+print(check_aei("paramedic")) # True
+
+
+Here is your output:
+True
+False
+True
+
+Great work! You've written your first regular expression!
+
+```
