@@ -317,3 +317,12 @@ print(check_punctuation("Aren't regular expressions awesome?")) # True
 print(check_punctuation("Wow! We're really picking up some steam now!")) # True
 print(check_punctuation("End of the line")) # False
 ```
+*if you want to find the character that are not letter use this `r"[a-zA-Z ]+"`*
+```
+>>> print(re.search(r"[^a-zA-Z]", "The is highway 90: i love it"))
+<re.Match object; span=(3, 4), match=' '>
+>>> print(re.search(r"[^a-zA-Z ]", "The is highway 90: i love it"))
+<re.Match object; span=(15, 16), match='9'>
+>>> print(re.search(r"[^a-zA-Z ]+", "The is highway 90: i love it"))
+<re.Match object; span=(15, 18), match='90:'>
+```
