@@ -269,3 +269,51 @@ Great work! You've written your first regular expression!
 >>> print(re.search(r"Pan", "pantho panda pong", re.IGNORECASE))
 <re.Match object; span=(0, 3), match='pan'>
 ```
+# Wildcards and character classes
+```
+>>> import re
+>>> text ="Python is a very user friendly language, I use python everyday"
+>>> print(re.search(r"[Pp]ython", text))
+<re.Match object; span=(0, 6), match='Python'>
+```
+```
+>>> print(re.search(r"[a-zA-Z]way", "The end of highway"))
+<re.Match object; span=(14, 18), match='hway'>
+>>> print(re.search(r"[a-zA-Z]gh", "The end of highway"))
+<re.Match object; span=(12, 15), match='igh'>
+>>> print(re.search(r"[a-zA-Z]e", "The end of highway"))
+<re.Match object; span=(1, 3), match='he'>
+>>> print(re.search(r"[a-zA-Z]ay\d+", "The end of highway79y"))
+<re.Match object; span=(15, 20), match='way79'>
+
+>>> print(re.search(r"highway[a-zA-z0-9]", "the highway7890 is the best highway9908"))
+<re.Match object; span=(4, 12), match='highway7'>
+
+>>> print(re.search(r"highway[a-zA-z0-9]", "the highway7890 100 is the best highway9908"))
+<re.Match object; span=(4, 12), match='highway7'>
+
+>>> print(re.search(r"highway[a-zA-z0-9]", "the highwayCalifornia7890 100 is the best highway9908"))
+<re.Match object; span=(4, 12), match='highwayC'>
+>>> print(re.search(r"highway[a-zA-z0-9]+", "the highwayCalifornia7890 100 is the best highway9908"))
+<re.Match object; span=(4, 25), match='highwayCalifornia7890'>
+
+r"highway[a-zA-z0-9]+", "the highwaynowhere3447890asdada100 is the best highway9908"))
+<re.Match object; span=(4, 34), match='highwaynowhere3447890asdada100'>
+
+
+```
+
+*Fill in the code to check if the text passed contains punctuation symbols: commas, periods, colons, semicolons, question marks, and exclamation points.*
+
+```
+import re
+def check_punctuation (text):
+  result = re.search(r"[,.:;?!]", text)
+  return result != None
+
+print(check_punctuation("This is a sentence that ends with a period.")) # True
+print(check_punctuation("This is a sentence fragment without a period")) # False
+print(check_punctuation("Aren't regular expressions awesome?")) # True
+print(check_punctuation("Wow! We're really picking up some steam now!")) # True
+print(check_punctuation("End of the line")) # False
+```
