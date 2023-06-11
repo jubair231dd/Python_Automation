@@ -234,3 +234,8 @@ Georgia, wrap me up in all your beauty, You are an angleI
 Georgia, wrap me up in all your beauty, You are an angleI 
 // this selects strings of both upper and lower case if `-i` command is used 
 ```
+# For finding any character suppose are use `a.l` command as follows:
+```
+ grep a.l /Users/student/Desktop/Courses/coursera_python_automate/demo.txt
+Georgia, wrap me up in all your beauty, You are an angleI 
+```
