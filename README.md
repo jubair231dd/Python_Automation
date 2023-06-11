@@ -239,3 +239,8 @@ Georgia, wrap me up in all your beauty, You are an angleI
  grep a.l /Users/student/Desktop/Courses/coursera_python_automate/demo.txt
 Georgia, wrap me up in all your beauty, You are an angleI 
 ```
+# `^` to find words start with a specific word and `$` to find words end with a specific character
+```
+grep ^are /Users/student/Desktop/Courses/coursera_python_automate/demo.txt
+❯ grep are$ /Users/student/Desktop/Courses/coursera_python
+```
