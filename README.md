@@ -264,3 +264,8 @@ True
 Great work! You've written your first regular expression!
 
 ```
+# For ignoring case 
+```
+>>> print(re.search(r"Pan", "pantho panda pong", re.IGNORECASE))
+<re.Match object; span=(0, 3), match='pan'>
+```
