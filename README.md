@@ -349,3 +349,41 @@ print(check_punctuation("End of the line")) # False
 
 
 ```
+
+# Repetition Qualifiers
+```
+>>> print(re.search(r"py.*n", "python pygmalion pygramon")) // `.*` selects any character in between `py` and `n`
+<re.Match object; span=(0, 25), match='python pygmalion pygramon'>
+
+>>> print(re.search(r"py.*n", "python pygmalion py4345amon"))
+<re.Match object; span=(0, 27), match='python pygmalion py4345amon'>
+
+>>> print(re.search(r"py[a-z]*n", "python Programming"))
+<re.Match object; span=(0, 6), match='python'>
+
+>>> print(re.search(r"py[a-zA-Z]*n", "python Programming"))
+<re.Match object; span=(0, 6), match='python'>
+>>> print(re.search(r"py[a-zA-Z ]*n", "python Programming"))
+<re.Match object; span=(0, 17), match='python Programmin'>
+>>> 
+
+>>> print(re.search(r"o+l+","whole whoolly holly"))
+<re.Match object; span=(2, 4), match='ol'>
+>>> print(re.search(r"o+l+","holly"))
+<re.Match object; span=(1, 4), match='oll'>
+
+import re
+def repeating_letter_a(text):
+  result = re.search(r"(?i)a.*a", text)
+  return result != None
+
+print(repeating_letter_a("banana")) # True
+print(repeating_letter_a("pineapple")) # False
+print(repeating_letter_a("Animal Kingdom")) # True
+print(repeating_letter_a("A is for apple")) # True
+
+>>> print(re.search(r"p?an", "an pen antho"))
+<re.Match object; span=(0, 2), match='an'> // here `?` makes p optional
+
+
+```
