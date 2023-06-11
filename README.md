@@ -232,7 +232,7 @@ Georgia, wrap me up in all your beauty, You are an angleI
 ```
 ❯ grep -i ar /Users/student/Desktop/Courses/coursera_python_automate/demo.txt
 Georgia, wrap me up in all your beauty, You are an angleI 
-// this selects strings of both upper and lower case if `-i` command is used 
+// this selects strings of both upper and lower case if `-i` flag is used 
 ```
 # For finding any character suppose are use `a.l` command as follows:
 ```
