@@ -343,5 +343,9 @@ print(check_punctuation("End of the line")) # False
 >>> print(re.findall(r"[^,./;@$%&]", "I love:there ,.;@#$%"))
 ['I', ' ', 'l', 'o', 'v', 'e', ':', 't', 'h', 'e', 'r', 'e', ' ', '#']
 
+>>> print(re.findall(r"\d+", "I love:there 32 1 3 4 2 ,.;@#$%"))
+['32', '1', '3', '4', '2']
+>>> 
+
 
 ```
