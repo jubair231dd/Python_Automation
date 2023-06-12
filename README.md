@@ -387,3 +387,13 @@ print(repeating_letter_a("A is for apple")) # True
 
 
 ```
+# Escape character
+* using the scape character `\` to select `.\com` *
+```
+>>> print(re.search(r"\.com", "welcome"))
+None
+
+>>> print(re.search(r"\.com", "jubairpantho@gmail.com"))
+<re.Match object; span=(18, 22), match='.com'>
+
+```
