@@ -404,7 +404,7 @@ None
 >>> print(re.search(r"\w*", "jubairpantho_gmail.com"))
 <re.Ma
 ```
-* www.regex101.com *
+www.regex101.com 
 
 ``` 
 >>> print(re.search(r"^A.*a$", "Alabamaanp"))// chooses only countries start with `A` and ends with `a`
@@ -424,7 +424,7 @@ None
 <re.Match object; span=(0, 19), match='_this_is_highway_79'>
 ```
 
-*Fill in the code to check if the text passed looks like a standard sentence, meaning that it starts with an uppercase letter, followed by at least some lowercase letters or a space, and ends with a period, question mark, or exclamation point.*
+`Fill in the code to check if the text passed looks like a standard sentence, meaning that it starts with an uppercase letter, followed by at least some lowercase letters or a space, and ends with a period, question mark, or exclamation point.`
 
 ```
 import re
