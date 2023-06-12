@@ -1,4 +1,4 @@
-# Python_Automation
+# *Python Automation
 # Lists the materials and files I needed to learn the automation in Python.
 
 # For opening file and reading the file:
