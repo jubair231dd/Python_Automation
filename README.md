@@ -397,3 +397,11 @@ None
 <re.Match object; span=(18, 22), match='.com'>
 
 ```
+*`\w` matches letters, numbers and underscores (alphanumeric character) 
+```
+>>> print(re.search(r"\w*", "jubairpantho@gmail.com"))
+<re.Match object; span=(0, 12), match='jubairpantho'>
+>>> print(re.search(r"\w*", "jubairpantho_gmail.com"))
+<re.Ma
+```
+* www.regex101.com *
