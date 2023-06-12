@@ -414,8 +414,8 @@ None
 <re.Match object; span=(0, 9), match='Australia'>
 ```
 
-```
-*finding a valid variable name : 
+*finding a valid variable name : *
+
 ```
 >>> pattern = r"^[a-zA-Z_][a-zA-Z0-9_]*$"
 >>> print(re.search(pattern, "_this_is highway 79"))
@@ -424,7 +424,7 @@ None
 <re.Match object; span=(0, 19), match='_this_is_highway_79'>
 ```
 
-`Fill in the code to check if the text passed looks like a standard sentence, meaning that it starts with an uppercase letter, followed by at least some lowercase letters or a space, and ends with a period, question mark, or exclamation point.`
+*Fill in the code to check if the text passed looks like a standard sentence, meaning that it starts with an uppercase letter, followed by at least some lowercase letters or a space, and ends with a period, question mark, or exclamation point.
 
 ```
 import re
