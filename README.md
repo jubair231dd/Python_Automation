@@ -388,7 +388,7 @@ print(repeating_letter_a("A is for apple")) # True
 
 ```
 # Escape character
-* using the scape character `\` to select `.\com` *
+*using the scape character `\` to select `.\com`*
 ```
 >>> print(re.search(r"\.com", "welcome"))
 None
