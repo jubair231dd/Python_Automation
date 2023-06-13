@@ -438,3 +438,128 @@ print(check_sentence("Hello")) # False
 print(check_sentence("1-2-3-GO!")) # False
 print(check_sentence("A star is born.")) # True
 ```
+
+# Capturing groups 
+```
+>>> result = re.search(r"^(\w*), (\w*)$", "Jubair, Pantho")
+>>> print(result)                                  
+<re.Match object; span=(0, 14), match='Jubair, Pantho'>
+>>> print(result.groups())
+('Jubair', 'Pantho')
+>>> print(result[0])
+Jubair, Pantho
+>>> print(result[1])
+Jubair
+>>> print(result[2])
+Pantho
+>>> "{} {}".format(result[2], result[1])
+'Pantho Jubair'
+```
+
+```
+import re
+def rearrange_name(name):
+  result = re.search(r"^(\w*), (\w.*)$", name)
+  if result == None:
+    return name
+  return "{} {}".format(result[2], result[1])
+
+name=rearrange_name("Kennedy, John F.")
+print(name)
+
+Here is your output:
+John F. Kennedy
+```
+
+*Repetition qualifiers
+```
+>>> print(re.search(r"[a-zA-Z]{5}", "a man was like ghost"))
+<re.Match object; span=(15, 20), match='ghost'>
+>>> 
+```
+*to find all the strings having length of five 
+```
+>>> print(re.findall(r"[a-zA-Z]{5}", "a man was like ghost and scary"))
+['ghost', 'scary']
+
+>>> print(re.findall(r"[a-zA-Z]{5}", "a man was like ghost and scary appeared "))
+['ghost', 'scary', 'appea']
+```
+*to match exactly letters of length five use this
+```
+>>> print(re.findall(r"\b[a-zA-Z]{5}\b", "a man was like ghost and scary appeared "))
+['ghost', 'scary']
+```
+*to find all the strings having length of five to ten 
+```
+>>> print(re.findall(r"\w{5,10}", "amar shonar bangla, ami tomai bhalobashi"))
+['shonar', 'bangla', 'tomai', 'bhalobashi']
+```
+*to find all the strings having length of more than five 
+```
+>>> print(re.findall(r"\w{5,}", "amar shonar bangla, ami tomai bhalobashi omafagunetoramerbone"))
+['shonar', 'bangla', 'tomai', 'bhalobashi', 'omafagunetoramerbone']
+```
+*to find all the words upto 20 characters long and starts with `s`
+```
+>>> print(re.findall(r"s\w{,20}", "I love strawberries and Bangladesh "))
+['strawberries', 'sh']
+```
+*find the words that are at least 7 charcters long 
+```
+import re
+def long_words(text):
+  pattern = r"\w{7,}"
+  result = re.findall(pattern, text)
+  return result
+
+print(long_words("I like to drink coffee in the morning.")) # ['morning']
+print(long_words("I also have a taste for hot chocolate in the afternoon.")) # ['chocolate', 'afternoon']
+print(long_words("I never drink tea late at night.")) # []
+```
+*getting `PID` from a log file 
+```
+>>> log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+>>> print(re.search(r"\[(\d+)\]", log))
+<re.Match object; span=(39, 46), match='[12345]'>
+>>> result = re.search(r"\[(\d+)\]", log)
+>>> print(result)
+<re.Match object; span=(39, 46), match='[12345]'>
+>>> print(result[0[)
+  File "<stdin>", line 1
+    print(result[0[)
+                   ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+>>> print(result[0])
+[12345]
+>>> print(result[1])
+12345
+```
+*fucntion for extracting a PID, if result is `None` it returns an empty string
+```
+>>> def extract_pid(log_line):
+...     regex = r"\[(\d+)\]"
+...     result = re.search(regex, log_line)
+...     if result is None:
+...             return ""
+...     return result[1]
+... 
+>>> print(extract_pid("july [123444555]"))
+123444555
+>>> print(extract_pid("99 elephants in a [cage]"))
+
+>>> 
+```
+*splitting and replacing
+```
+>>> re.split(r"[.?!]","One sentence ! second sentence. third senetence?")
+['One sentence ', ' second sentence', ' third senetence', '']
+>>> re.split(r"([.?!])","One sentence ! second sentence. third senetence?")
+['One sentence ', '!', ' second sentence', '.', ' third senetence', '?', '']
+>>> re.sub(r"[\w.%+-]+@[\w.-]+", "[REDACTED]", "Received an email for go_nuts95@my.example.com")
+'Received an email for [REDACTED]'
+
+>>> re.sub(r"^([\w.-]*), ([\w.-]*)$", r"\2 \1","Pantho, Jubair")
+'Jubair Pantho'
+>>> 
+```
