@@ -635,3 +635,57 @@ wc: notpresent.py: open: No such file or directory
 ❯ echo $?
 1  // failed
 ```
+# Running System Commands in Python
+```
+>>> import subprocess
+>>> subprocess.run(["date"])
+Tue Jun 13 16:48:31 EDT 2023
+CompletedProcess(args=['date'], returncode=0)
+>>> subprocess.run(["sleep"])
+usage: sleep seconds
+CompletedProcess(args=['sleep'], returncode=1)
+>>> subprocess.run(["sleep"])
+usage: sleep seconds
+CompletedProcess(args=['sleep'], returncode=1)
+>>> subprocess.run(["sleep", "5"])
+CompletedProcess(args=['sleep', '5'], returncode=0)
+>>> result = subprocess.run(["ls","this file does not exist"])
+ls: this file does not exist: No such file or directory
+>>> print(result.returncode)
+1
+```
+# Obtaining the Output of a System Command
+```
+>>> import subprocess
+>>> result = subprocess.run(["host", "8.8.8.8"], capture_output=True)
+>>> print(re
+repr(     result    return    reversed(
+>>> print(result.returncode)
+0
+>>> print(result.stdout)
+b'8.8.8.8.in-addr.arpa domain name pointer dns.google.\n'
+>>> print(result.stdout.decode().split())
+['8.8.8.8.in-addr.arpa', 'domain', 'name', 'pointer', 'dns.google.']
+>>>
+```
+
+```
+>>> result = subprocess.run(["rm","does not exist"], capture_output = True)
+>>> print(result.returncode)
+1
+>>> print(result.stderr)
+b'rm: does not exist: No such file or directory\n'
+>>> print(result.stderr.decode().split())
+['rm:', 'does', 'not', 'exist:', 'No', 'such', 'file', 'or', 'directory']
+>>>
+>>> print(result.stdout)
+b''
+//stdout and stderr are totally different
+```
+```
+>>> result = subprocess.run(["host", "8.8.8.8"], capture_output=True)
+>>> print(result.stdout)
+b'8.8.8.8.in-addr.arpa domain name pointer dns.google.\n'
+>>> print(result.stderr)
+b''
+```
