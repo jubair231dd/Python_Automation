@@ -618,3 +618,20 @@ zsh: permission denied: ./parameters.py
 ❯ ./parameters.py one two three four
 ['./parameters.py', 'one', 'two', 'three', 'four']
 ```
+# Exit status
+```
+`wc` counts the line word and character counts of a file.
+❯ wc parameters.py
+       4       5      51 parameters.py
+❯ echo $?
+0  //when returned zero that means ran successfully
+❯ cat parameters.py
+#!/usr/bin/env python3
+
+import sys
+print(sys.argv)
+❯ wc notpresent.py
+wc: notpresent.py: open: No such file or directory
+❯ echo $?
+1  // failed
+```
