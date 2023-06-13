@@ -563,3 +563,41 @@ SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
 'Jubair Pantho'
 >>> 
 ```
+
+#Get the `environment` variable 
+```
+ env
+TERM_PROGRAM=vscode
+_P9K_TTY=/dev/ttys003
+TERM=xterm-256color
+S
+```
+*get the `PATH` variable
+```
+❯ echo $PATH
+/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/student/opt/anaconda3/bin:/Users/student/opt/anaconda3/condabin
+❯ echo $DISPLAY
+/private/tmp/com.apple.launchd.xbG9Rt7WPJ/org.xquartz:0
+❯ echo $HOME
+/Users/student
+❯ echo $SHELL
+/bin/zsh
+❯ echo $FRUIT
+
+❯ touch variables.py
+❯ nano variables.py
+❯ chmod +x variables.py
+❯ ./variables.py
+HOME: /Users/student
+SHELL: /bin/zsh
+FRUIT: 
+
+//set the fruit variable to pineapple
+
+❯ export FRUIT=Pineapple
+❯ ./variables.py
+HOME: /Users/student
+SHELL: /bin/zsh
+FRUIT: Pineapple
+
+```
