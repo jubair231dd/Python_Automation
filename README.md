@@ -601,3 +601,20 @@ SHELL: /bin/zsh
 FRUIT: Pineapple
 
 ```
+# Command line arguments are stored in the `sys` module
+```
+❯ touch parameters.py
+❯ nano parameters.py
+❯ cat parameters.py
+#!/usr/bin/env python3
+
+import sys
+print(sys.argv)
+❯ ./parameters.py
+zsh: permission denied: ./parameters.py
+❯ chmod +x parameters.py
+❯ ./parameters.py
+['./parameters.py']
+❯ ./parameters.py one two three four
+['./parameters.py', 'one', 'two', 'three', 'four']
+```
