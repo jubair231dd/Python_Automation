@@ -717,7 +717,7 @@ kill: kill 55471 failed: no such process
 
 *important note : control + c terminates the process, cntr + z stops the process which can be again inititated using the `fg` command.*
 
-#Basic Linux Commands Cheat-Sheet
+# Basic Linux Commands Cheat-Sheet
 ```
 This list includes a bunch of different commands that are useful to know when working with Linux. Not all of these commands are covered in the videos, so feel free to investigate them on your own.
 
