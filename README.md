@@ -698,7 +698,7 @@ PING star.c10r.facebook.com (31.13.88.1): 56 data bytes
 64 bytes from 31.13.88.1: icmp_seq=1 ttl=55 time=12.514 ms
 64 bytes from 31.13.88.1: icmp_seq=2 ttl=55 time=11.243 ms❯ ping 
 ```
-*// run this in a second terminal and `kill` , ps ax lists all the running processes, grep find the info related to the `ping`*
+*run this in a second terminal and `kill` , ps ax lists all the running processes, grep find the info related to the `ping`*
 
 ```
 ❯ ps ax | grep ping
@@ -715,4 +715,4 @@ kill: kill 55471 failed: no such process
 ❯ kill 55536
 ```
 
-*important note : control + c terminates the process, cntr + z stops the process which can be again inititated using the `fg` command.
+*important note : control + c terminates the process, cntr + z stops the process which can be again inititated using the `fg` command.*
