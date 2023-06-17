@@ -689,3 +689,30 @@ b'8.8.8.8.in-addr.arpa domain name pointer dns.google.\n'
 >>> print(result.stderr)
 b''
 ```
+
+# Terminating processes using the `kill` command 
+```
+❯ ping www.facebok.com
+PING star.c10r.facebook.com (31.13.88.1): 56 data bytes
+64 bytes from 31.13.88.1: icmp_seq=0 ttl=55 time=12.162 ms
+64 bytes from 31.13.88.1: icmp_seq=1 ttl=55 time=12.514 ms
+64 bytes from 31.13.88.1: icmp_seq=2 ttl=55 time=11.243 ms❯ ping 
+```
+*// run this in a second terminal and `kill` , ps ax lists all the running processes, grep find the info related to the `ping`*
+
+```
+❯ ps ax | grep ping
+55467 s003  S+     0:00.01 ping www.google.com
+55471 s004  S+     0:00.00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox ping
+❯ kill
+kill: not enough arguments
+❯ kill 55467
+❯ kill 55471
+kill: kill 55471 failed: no such process
+❯ ps ax | grep ping
+55536 s003  S+     0:00.01 ping www.facebok.com
+55543 s004  S+     0:00.00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox ping
+❯ kill 55536
+```
+
+*important note : control + c terminates the process, cntr + z stops the process which can be again inititated using the `fg` command.
