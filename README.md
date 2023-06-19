@@ -816,7 +816,7 @@ jobs: lists the jobs currently running or stopped
 
 top: shows the processes currently using the most CPU time (press "q" to quit) 
 ```
-#Glob module
+# Glob module
 ```
 echo *.py lists all the .py file
 echo c* lists all the files name start with c
