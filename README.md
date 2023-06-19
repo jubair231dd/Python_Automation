@@ -828,3 +828,8 @@ bash-3.2$ if test -n $PATH; then echo "your path is not empty"; fi
 your path is not empty
 ```
 *test returns zero when true and 1 when false*
+```
+bash-3.2$ if [ -n $PATH ]; then echo "your path is not empty"; fi
+your path is not empty
+```
+*here square bracket [] is the alternative for writing test*
