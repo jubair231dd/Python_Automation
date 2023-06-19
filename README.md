@@ -822,3 +822,9 @@ echo *.py lists all the .py file
 echo c* lists all the files name start with c
 echo ?????.txt lists all the text files start with five character
 ```
+# Test command
+```
+bash-3.2$ if test -n $PATH; then echo "your path is not empty"; fi
+your path is not empty
+```
+*test returns zero when true and 1 when false*
