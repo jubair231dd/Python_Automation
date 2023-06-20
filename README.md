@@ -833,3 +833,39 @@ bash-3.2$ if [ -n $PATH ]; then echo "your path is not empty"; fi
 your path is not empty
 ```
 *here square bracket [] is the alternative for writing test*
+ # Working with the `system.log` file to find the most frequent events 
+ ```
+bash-3.2$ tail /var/log/system.log
+Jun 20 12:58:01 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 13:13:28 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 13:29:21 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 13:46:30 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 14:02:50 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 14:18:39 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 14:28:58 CECSAdmins-MacBook-Pro bndaemon[44340]: 2023-06-20 18:28:58 UTC :: Submitted,req=3936,resp=0,Ping,portal.utc.edu
+Jun 20 14:28:58 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 14:48:41 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+Jun 20 15:00:15 CECSAdmins-MacBook-Pro syslogd[550]: ASL Sender Statistics
+bash-3.2$ tail /var/log/system.log | cut -d" " -f5-
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+bndaemon[44340]: 2023-06-20 18:28:58 UTC :: Submitted,req=3936,resp=0,Ping,portal.utc.edu
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+syslogd[550]: ASL Sender Statistics
+bash-3.2$ cut -d" " -f5- /var/log/system.log |sort|uniq -c | sort -nr | head
+  58 syslogd[550]: ASL Sender Statistics
+  13 syslogd[550]: Configuration Notice:
+  10 selected messages.
+  10 appear in standard system log files or in the ASL database.
+   2 Module "com.apple.asl" override any specified in ASL Module "com.apple.authd".
+   1 output destination "/var/log/system.log" with ASL Module "com.apple.asl".
+   1 output destination "/var/log/asl" with ASL Module "com.apple.asl".
+   1 output destination "/private/var/log/keybagd.log" with ASL Module "com.apple.mkb.internal".
+   1 last message repeated 1 time ---
+   1 bndaemon[44340]: 2023-06-20 18:28:58 UTC :: Submitted,req=3936,resp=0,Ping,portal.utc.edu
+```
